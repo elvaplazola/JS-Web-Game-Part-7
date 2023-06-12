@@ -29,8 +29,35 @@ function newNonPlayableCharacter(x, y) {
             direction = 'east';
             element.src = `./assets/red-character/east.gif`;
             await sleep(time);
+            stop();
         resolve();
-        stop();
+        });   
+    }
+   async function walkNorth(time) {
+        return new Promise(async (resolve) =>{
+            direction = 'north';
+            element.src = `./assets/red-character/north.gif`;
+            await sleep(time);
+            stop();
+        resolve();
+        });   
+    }
+   async function walkWest(time) {
+        return new Promise(async (resolve) =>{
+            direction = 'west';
+            element.src = `./assets/red-character/west.gif`;
+            await sleep(time);
+            stop();
+        resolve();
+        });   
+    }
+   async function walkSouth(time) {
+        return new Promise(async (resolve) =>{
+            direction = 'south';
+            element.src = `./assets/red-character/south.gif`;
+            await sleep(time);
+            stop();
+        resolve();
         });   
     }
     
