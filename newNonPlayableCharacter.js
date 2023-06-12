@@ -62,21 +62,6 @@ function newNonPlayableCharacter(x, y) {
     }
     
 
-    function walkNorth() {
-        direction = 'north'
-        element.src = `./assets/red-character/north.gif`
-    }
-
-    function walkWest() {
-        direction = 'west'
-        element.src = `./assets/red-character/west.gif`
-    }
-
-    function walkSouth() {
-        direction = 'south'
-        element.src = `./assets/red-character/south.gif`
-    }
-
     function stop() {
         direction = null
         element.src = `./assets/red-character/static.gif`
@@ -97,3 +82,18 @@ function newNonPlayableCharacter(x, y) {
         })
     }
 }
+
+setTimeout(moveNPC, 1000);
+
+// create async function
+async function moveNPC(){
+    await npc.walkNorth(1400)
+    await npc.walkEast(1200)
+    await npc.walkSouth(300)
+    await npc.walkEast(1500)
+    await npc.walkSouth(1500)
+    await npc.walkWest(2700)
+    await npc.walkNorth(400)
+}
+
+moveNPC()

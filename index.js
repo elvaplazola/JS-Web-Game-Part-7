@@ -19,17 +19,3 @@ move(newItem('assets/shield.png')).to(165, 335)
 move(newItem('assets/staff.png')).to(600, 250)
 
 
-setTimeout(moveNPC, 1000);
-
-// create async function
-async function moveNPC(){
-    await npc.walkNorth(1400)
-    await npc.walkEast(1200)
-    await npc.walkSouth(300)
-    await npc.walkEast(1500)
-    await npc.walkSouth(1500)
-    await npc.walkWest(2700)
-    await npc.walkNorth(400)
-}
-
-moveNPC()
