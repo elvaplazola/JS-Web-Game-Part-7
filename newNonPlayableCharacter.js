@@ -24,12 +24,15 @@ function newNonPlayableCharacter(x, y) {
     setInterval(moveCharacter, 1)
 
 
-    async function walkEast(milliseconds) {
-        direction = 'east';
-        element.src = `./assets/red-character/east.gif`;
-        startMovement();
-        await sleep(milliseconds);
+    function walkEast(milliseconds) {
+        return new Promise(async (resolve) =>{
+            direction = 'east';
+            element.src = `./assets/red-character/east.gif`;
+            startMovement();
+            await sleep(milliseconds);
         stopMovement();
+        resolve();
+        });   
     }
     
 
